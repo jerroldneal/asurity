@@ -27,8 +27,9 @@ export default {
   },
   methods: {
     async getContactList() {
-      let result = await axios.get("http://localhost:3000/contacts");
-      this.contactList = result.data;
+      let data = await this.getList("contacts");
+      //let result = await axios.get("http://localhost:3000/contacts");
+      this.contactList = data;
     },
     async addContactHandler(payload) {
       try {
@@ -56,7 +57,13 @@ export default {
       } catch(error) {
         console.log(error);
       }
-    }
+    },
+    async getList(collectionName) {
+      let url = `http://localhost:3000/${collectionName}`;
+      let result = await axios.get(url);
+      console.log('getList', collectionName, result, result.data);
+      return result.data;
+    },
 
   },
   mounted() {
