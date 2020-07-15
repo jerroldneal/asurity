@@ -116,17 +116,19 @@ export default {
       this.submitted = true;
       let result = await this.$validator.validate();
       console.log(result);
-      let formData = this.retrieveFormData();
-      console.log(formData);
-      if(this.$props.contact == null) {
-        this.$emit('addContact',formData);
-      } else {
-        let payload = {original:this.$props.contact,updated:formData};
-        this.$emit('updateContact', payload);
-      }
+      if(result === true) {
+        let formData = this.retrieveFormData();
+        console.log(formData);
+        if(this.$props.contact == null) {
+          this.$emit('addContact',formData);
+        } else {
+          let payload = {original:this.$props.contact,updated:formData};
+          this.$emit('updateContact', payload);
+        }
 
-      this.isVisible = false;
-      this.submitted = false;
+        this.isVisible = false;
+        this.submitted = false;
+      }
     },
     initForm() {
       this.form = {
