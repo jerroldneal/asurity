@@ -16,40 +16,6 @@
         "methodId": 2
       },
       "id": 1
-    },
-    {
-      "firstName": null,
-      "lastName": null,
-      "email": null,
-      "address": {
-        "street": null,
-        "city": null,
-        "state": null,
-        "zip": null
-      },
-      "phone": null,
-      "contact": {
-        "frequencyId": null,
-        "methodId": null
-      },
-      "id": 2
-    },
-    {
-      "firstName": null,
-      "lastName": null,
-      "email": null,
-      "address": {
-        "street": null,
-        "city": null,
-        "state": null,
-        "zip": null
-      },
-      "phone": null,
-      "contact": {
-        "frequencyId": null,
-        "methodId": null
-      },
-      "id": 3
     }
   ],
   "contactFrequencies": [
