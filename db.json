@@ -1,0 +1,100 @@
+{
+  "contacts": [
+    {
+      "firstName": "Jerrold",
+      "lastName": "Neal",
+      "email": "jerrold.neal@gmail.com",
+      "address": {
+        "street": "12224 NE 8th St APT 310",
+        "city": "BELLEVUE",
+        "state": "WA",
+        "zip": "98005"
+      },
+      "phone": "18184450634",
+      "contact": {
+        "frequencyId": 0,
+        "methodId": 2
+      },
+      "id": 1
+    },
+    {
+      "firstName": null,
+      "lastName": null,
+      "email": null,
+      "address": {
+        "street": null,
+        "city": null,
+        "state": null,
+        "zip": null
+      },
+      "phone": null,
+      "contact": {
+        "frequencyId": null,
+        "methodId": null
+      },
+      "id": 2
+    },
+    {
+      "firstName": null,
+      "lastName": null,
+      "email": null,
+      "address": {
+        "street": null,
+        "city": null,
+        "state": null,
+        "zip": null
+      },
+      "phone": null,
+      "contact": {
+        "frequencyId": null,
+        "methodId": null
+      },
+      "id": 3
+    }
+  ],
+  "contactFrequencies": [
+    {
+      "id": "0",
+      "description": "Contact only about account information"
+    },
+    {
+      "id": "1",
+      "description": "OK to contact with marketing information"
+    },
+    {
+      "id": "2",
+      "description": "OK to contact with third-party marketing information"
+    }
+  ],
+  "contactMethods": [
+    {
+      "id": "0",
+      "description": "Text"
+    },
+    {
+      "id": "1",
+      "description": "Email"
+    },
+    {
+      "id": "2",
+      "description": "Phone"
+    }
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
