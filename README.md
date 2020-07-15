@@ -1,3 +1,7 @@
+Snapshot of this application:
+
+![GitHub Logo](/images/snapshot.png)
+Format: ![Alt Text](url)
 # my-vue-app
 
 ## Project setup
