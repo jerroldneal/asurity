@@ -125,7 +125,7 @@ export default {
         this.$emit('updateContact', payload);
       }
 
-      this.isVisible = true;
+      this.isVisible = false;
       this.submitted = false;
     },
     initForm() {
