@@ -12,11 +12,13 @@
 </template>
 
 <script>
+import { Component, Prop, Vue } from 'vue-property-decorator';
 import AppHeader from './components/AppHeader.vue';
 import ListContacts from './components/ListContacts.vue';
 import axios from 'axios';
 
-export default {
+
+@Component({
   name: 'App',
   components: {
     AppHeader,
@@ -30,8 +32,7 @@ export default {
   },
   methods: {
     async getContactList() {
-      let data = await this.getList("contacts");
-      //let result = await axios.get("http://localhost:3000/contacts");
+      const data = await this.getList("contacts");
       this.contactList = data;
     },
     async addContactHandler(payload) {
@@ -45,7 +46,7 @@ export default {
     async updateContactHandler(payload) {
       console.log(payload);
       try {
-      let url = `http://localhost:3000/contacts/${payload.original.id}`;
+      const url = `http://localhost:3000/contacts/${payload.original.id}`;
           await axios.put(url, payload.updated);
           await this.getContactList();
       } catch(error) {
@@ -53,7 +54,7 @@ export default {
       }
     },
     async deleteContactHandler(contactId) {
-      let url = `http://localhost:3000/contacts/${contactId}`;
+      const url = `http://localhost:3000/contacts/${contactId}`;
       try {
           await axios.delete(url);
           await this.getContactList();
@@ -67,11 +68,9 @@ export default {
       await this.getContactList();
     },
     async getList(collectionName) {
-      let sortOrder = this.orderByList ? "?_sort="+this.orderByList.join("&") : "";
-      let url = `http://localhost:3000/${collectionName}${sortOrder}`;
-      console.log("url",url);
-      let result = await axios.get(url);
-      console.log('getList', collectionName, result, result.data);
+      const sortOrder = this.orderByList ? "?_sort="+this.orderByList.join("&") : "";
+      const url = `http://localhost:3000/${collectionName}${sortOrder}`;
+      const result = await axios.get(url);
       return result.data;
     },
 
@@ -79,7 +78,8 @@ export default {
   mounted() {
     this.getContactList();
   }
-}
+})
+export default class App extends Vue {}
 </script>
 
 <style>
