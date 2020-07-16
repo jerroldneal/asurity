@@ -3,7 +3,9 @@
     <AppHeader />
     <b-container>
       <b-row class="justify-content-center">
-        <ListContacts :contacts="contactList" @addContact="addContactHandler" @updateContact="updateContactHandler" @deleteContact="deleteContactHandler"/>
+        <b-col>
+          <ListContacts :contacts="contactList" @addContact="addContactHandler" @updateContact="updateContactHandler" @deleteContact="deleteContactHandler" @sortBy="sortByHandler"/>
+        </b-col>
       </b-row>
     </b-container>
   </div>
@@ -22,7 +24,8 @@ export default {
   },
   data() {
     return {
-      contactList: []
+      contactList: [],
+      orderByList: ['email']
     }
   },
   methods: {
@@ -58,8 +61,15 @@ export default {
         console.log(error);
       }
     },
+    async sortByHandler(sortByField) {
+      console.log(sortByField);
+      this.orderByList = [sortByField];
+      await this.getContactList();
+    },
     async getList(collectionName) {
-      let url = `http://localhost:3000/${collectionName}`;
+      let sortOrder = this.orderByList ? "?_sort="+this.orderByList.join("&") : "";
+      let url = `http://localhost:3000/${collectionName}${sortOrder}`;
+      console.log("url",url);
       let result = await axios.get(url);
       console.log('getList', collectionName, result, result.data);
       return result.data;

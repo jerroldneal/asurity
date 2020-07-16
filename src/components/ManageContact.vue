@@ -91,28 +91,18 @@ export default {
         PhoneNumber: null,
         StateSelected: null,
         StateOptions: [
-          { value: null, text: 'Please select a state' },
-          { value: 'WA', text: "Washington" },
-          { value: 'DC', text: "Washington D.C."}
+          { value: null, text: 'Please select a state' }
         ],
-
         ContactFrequencySelected: null,
         ContactFrequencyOptions: [
-          { value: null, text: 'Please select an option' },
-          { value: 0, text: 'Contact only about account information' },
-          { value: 1, text: 'OK to contact with marketing information' },
-          { value: 2, text: 'OK to contact with third-party marketing information' },
+          { value: null, text: 'Please select an option' }
         ],
         ContactMethodSelected: null,
         ContactMethodOptions: [
-          { value: null, text: 'Please select an option' },
-          { value: 0, text: 'Text' },
-          { value: 1, text: 'Email' },
-          { value: 2, text: 'Phone' },
+          { value: null, text: 'Please select an option' }
         ]
       },
       submitted: false
-
     }
   },
   methods: {
