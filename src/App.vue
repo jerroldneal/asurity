@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import { Component, Prop, Vue } from 'vue-property-decorator';
+import { Component, Vue } from 'vue-property-decorator';
 import AppHeader from './components/AppHeader.vue';
 import ListContacts from './components/ListContacts.vue';
 import axios from 'axios';
