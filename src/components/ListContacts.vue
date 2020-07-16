@@ -22,14 +22,15 @@
             <b-tab title="Contacts" active>
               <b-card-text>
                 <b-card-group deck>
-                  <b-card style="min-width: 50%;" class="m-3"
+                  <b-card style="min-width: 40%;" class="m-3"
                     :border-variant="contact.contact.frequencyId > 0 ? 'primary':'danger'"
                     align="center"
                     v-for="contact in contacts" :key="contact.id">
-                    <b-card-text><strong>Name:</strong>  {{contact.firstName}} {{contact.lastName}}</b-card-text>
-                    <b-card-text><strong>Email Address:</strong>  {{contact.email}}</b-card-text>
-                    <b-card-text><strong>City:</strong>  {{contact.address.city}}</b-card-text>
-                    <b-card-text><strong>Zip code:</strong>  {{contact.address.zip}}</b-card-text>
+                    <b-card-text>
+                    <strong>Name:</strong>  {{contact.firstName}} {{contact.lastName}}<br/>
+                    <strong>Email Address:</strong>  {{contact.email}}<br/>
+                    <strong>City:</strong>  {{contact.address.city}}<br/>
+                    <strong>Zip code:</strong>  {{contact.address.zip}}<br/>
                     <hr/>
                     <b-row>
                       <b-col>
@@ -39,6 +40,7 @@
                         <ManageContact :contact="contact" @updateContact="updateContact"/>
                       </b-col>
                     </b-row>
+                    </b-card-text>
                   </b-card>
                 </b-card-group>
               </b-card-text>
