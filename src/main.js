@@ -8,7 +8,9 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
 
 // Install BootstrapVue
 Vue.use(BootstrapVue)
-Vue.use(VeeValidate)
+Vue.use(VeeValidate, {
+  fieldsBagName: 'vvFields'
+});
 // Install components globally
 
 // Optionally install the BootstrapVue icon components plugin
